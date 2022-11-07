@@ -8,15 +8,13 @@ Social Site on Django by Tanmay Vijay
 
 
 {%block content%}
+<div class="top-container" style="text-align:center;">
+	<h1 style="font-family: 'Dancing Script', cursive; font-size:15vh;">Epicenter</h1>
+	<p style="font-size:4vh;font-family: 'Montserrat', sans-serif; margin-top: 15px;">
+		The IIT Bhilai's one-stop WebApp for catering to your needs.</a>
+	</p>
+</div>
 
-<h1>Social Site on Django by Tanmay Vijay</h1>
-<p>
-	Contact Me On: <a href="mailto:tanmayvijay27@gmail.com">Email</a>
-</p>
-
-<h4>
-	Looking for job in Machine Learning and Web Applications based domain.
-</h4>
 
 {%endblock%}
 
@@ -28,22 +26,22 @@ Social Site on Django by Tanmay Vijay
 
 <div class="jumbotron">
 
-<a href="{%url 'accounts:register'%}">
-	<button class="btn btn-warning" style="padding:60px;">
-	<font size=30px;><b>Register</b></font>
-</button>
-</a>
+	<a href="{%url 'accounts:register'%}">
+		<button class="btn btn-warning" style="padding:60px;">
+			<font size=30px;><b>Register</b></font>
+		</button>
+	</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<a href="{%url 'accounts:login'%}">
-<button class="btn btn-success" style="padding:60px;">
-	<font size=30px;><b>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</b></font>
-</button>
-</a>
+	<a href="{%url 'accounts:login'%}">
+		<button class="btn btn-success" style="padding:60px;">
+			<font size=30px;><b>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</b></font>
+		</button>
+	</a>
 </div>
 
 {%endif%}
