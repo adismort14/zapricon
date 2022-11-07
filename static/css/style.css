@@ -66,3 +66,61 @@ div.content {
   color: white;
 }
 
+.jumbotron a h2{
+  color: white;
+}
+
+.jumbotron>a:hover{
+  text-decoration: none;
+
+}
+.jumbotron a h2:hover{
+  color:rgb(153, 255, 255);
+
+}
+
+.jumbotron p a{
+  color:rgb(153, 255, 255);
+}
+
+.topic-item {
+  color:rgb(153, 255, 255);
+}
+
+.topic-item:hover{
+  color: white;
+}
+
+.topic-item:hover{
+  text-decoration: none;
+}
+
+.card{
+  margin:20px auto;
+  background-color: rgb(97, 97, 97);
+  text-align: center;
+  border-radius: 1.5%;
+}
+
+.card-content{
+  padding-top: 4%;
+  padding-bottom: 5%;
+  font-size: xx-large;
+}
+
+.topic-header{
+  font-size: 10vh;
+  font-family: "Poppins";
+}
+.post-header{
+  font-size: 10vh;
+  font-family: "Poppins";
+}
+
+a>h3{
+  color:rgb(153, 255, 255);
+}
+
+a>h3:hover{
+  color: white;
+}

@@ -8,21 +8,30 @@ Topics
 
 
 {%block content%}
-<h1>Topics:</h1>
+<h1 class="topic-header">Topics:</h1>
 
 
 {%if topics%}
 {%for topic in topics%}
 
-<p>
-	<a href="{%url 'posts:posts_by_topic' topic.slug %}">
-		<h3>
-			{{topic.name|title}}
-		</h3>
-	</a>
-</p>
+<div class="card">
+  <div class="card-content">
+    <p class="title">
+      <p>
+				<a href="{%url 'posts:posts_by_topic' topic.slug %}" class="topic-item">
+					<h3>
+						{{topic.name|title}}
+					</h3>
+				</a>
+			</p>
+    </p>
+  </div>
+</div>
+
 
 
 {%endfor%}
 {%endif%}
 {%endblock%}
+
+
