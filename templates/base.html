@@ -4,6 +4,9 @@
 <html>
   <head>
     <title>{%block title%} {%endblock title%}</title>
+    {% comment %} {% load static %}
+    <script src="{% static '/js/app.js' %}" type="text/javascript"></script>
+    {% endcomment %}
 
     <link
       rel="stylesheet"
@@ -67,7 +70,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{%url 'posts:posts_home'%}"
-              >Posts <span class="sr-only"></span
+              >Feed <span class="sr-only"></span
             ></a>
           </li>
           <li class="nav-item">
@@ -76,7 +79,6 @@
             >
           </li>
 
-          {%if request.user.is_authenticated%}
           <li class="nav-item dropdown">
             <a
               class="nav-link active dropdown-toggle"
@@ -90,12 +92,10 @@
               People
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% comment %}
               <a class="dropdown-item" href="{%url 'accounts:accounts_home'%}"
                 >Suggested People</a
               >
               <div class="dropdown-divider"></div>
-              {% endcomment %}
 
               <a class="dropdown-item" href="{%url 'accounts:following'%}"
                 >Following</a
@@ -106,7 +106,6 @@
               >
             </div>
           </li>
-          {%endif%}
         </ul>
 
         {%if not request.user.is_authenticated%}
@@ -135,7 +134,7 @@
       </div>
     </nav>
 
-    <div class="container" style="margin: 35px auto; min-width: 80%">
+    <div class="container" style="margin: 35px auto; min-width: 70%">
       <div class="jumbotron" style="background: black">
         {%block content%} {%endblock content%}
       </div>

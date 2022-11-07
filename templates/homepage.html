@@ -2,46 +2,39 @@
 
 
 {%block title%}
-Social Site on Django by Tanmay Vijay
+Epicenter
 {%endblock%}
-
-
 
 {%block content%}
 <div class="top-container" style="text-align:center;">
 	<h1 style="font-family: 'Dancing Script', cursive; font-size:15vh;">Epicenter</h1>
 	<p style="font-size:4vh;font-family: 'Montserrat', sans-serif; margin-top: 15px;">
-		The IIT Bhilai's one-stop WebApp for catering to your needs.</a>
+		The IIT Bhilai's one-stop WebApp for all your needs.</a>
 	</p>
 </div>
-
-
 {%endblock%}
-
-
 
 {%block content_no_jt%}
 
 {%if not request.user.is_authenticated %}
 
-<div class="jumbotron">
-
-	<a href="{%url 'accounts:register'%}">
-		<button class="btn btn-warning" style="padding:60px;">
-			<font size=30px;><b>Register</b></font>
-		</button>
-	</a>
-
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-	<a href="{%url 'accounts:login'%}">
-		<button class="btn btn-success" style="padding:60px;">
-			<font size=30px;><b>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</b></font>
-		</button>
-	</a>
+	<div class="popup" id="popup"
+		style="width:80%; height:25vh;background:gray;border-radius:10px;text-align:center;padding:10px 30px 0;color:black;margin:0 auto;">
+		<h2 style="font-size:38px;font-weight:500;margin:30px 0 10px;">You are currently browsing as a guest.</h2>
+		<p style="margin-top: 15px;margin-bottom:5px;font-weight: 350;font-size:20px;">Login to use all the features!</p>
+		<div class="button-container" style="display:flex;justify-content:center;">
+			<a href="{%url 'accounts:register'%}" style="flex-basis:100px;margin-right:50px;">
+				<button class="btn btn-warning" style="width:100%;margin-top:20px;padding:10px 0;border:0;outline:none;font-size:18px;border-radius:7px;cursor:pointer;">
+					Register
+				</button>
+			</a>
+			<a href="{%url 'accounts:login'%}" style="flex-basis:100px;">
+				<button class="btn btn-success" style="width:100%;margin-top:20px;padding:10px
+					0;border:0;outline:none;font-size:18px;border-radius:7px;cursor:pointer;">
+					Login
+				</button>
+			</a>
+		</div>
 </div>
 
 {%endif%}
