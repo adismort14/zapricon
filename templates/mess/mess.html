@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}" />
+    <style>
+      #Day{
+        margin:40px auto 40px;
+      }
+       label{
+         font-size: 200%;
+       }
+       select{
+         font-size: 200%;
+         background-color: rgb(97,97,97);
+         padding:5px;
+         border-radius: 5%;
+         color: white;
+       }
+      body{
+        margin:0 auto 0;
+        background-color: black;
+        color:white;
+        font-family: "Poppins";
+
+      }
+      iframe{
+        width: 50%;
+        height: 60vh;
+        margin: auto auto;
+        background-color: rgb(97,97,97);
+      }
+      div{
+        margin: auto auto;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <label for="Day">Choose the day:</label>
+
+  <select name="Day" id="Day">
+    <option value="Select">--Select--</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select>
+    <div id="excel"></div>
+  </body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+  $(function() {
+        $('#Day').on('change',function(){
+      if( $(this).val()=="Monday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1802086908&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Tuesday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=347923426&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Wednesday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=433451765&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Thursday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1903663321&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Friday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=2075069197&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Saturday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=80858048&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Sunday"){
+        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1026717145&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      }
+      else if( $(this).val()=="Select"){
+        document.getElementById('excel').innerHTML = '';
+      }
+      
+  });});
+      </script>
