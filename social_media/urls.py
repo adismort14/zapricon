@@ -23,11 +23,12 @@ from . import views as main_views
 # list of urls after domain/
 urlpatterns = [
     # admin panel
-    path('admin/', admin.site.urls),
-     # website homepage
-    path('', main_views.homepage, name='homepage'),
+    path("admin/", admin.site.urls),
+    # website homepage
+    path("", main_views.homepage, name="homepage"),
     # accounts app urls
-    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
     # posts app urls
-    path('posts/', include('posts.urls', namespace='posts')),
+    path("posts/", include("posts.urls", namespace="posts")),
+    path("cms/", include("cms.urls")),
 ]

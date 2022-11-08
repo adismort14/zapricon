@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Complaint Register</title>
+  </head>
+
+  <body>
+    <h1>Please file your complaints here!</h1>
+    {%for entry in data %}
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">{{entry.messName}}</p>
+        <button class="card-header-icon" aria-label="more options">
+          <span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </header>
+      <div class="card-content">
+        <div class="content">{{entry.complaint}}</div>
+      </div>
+      <footer class="card-footer">
+        <a
+          href="{% url 'cms:read' complaint_id=MessComplaint.id%}"
+          class="card-footer-item"
+          >Read</a
+        >
+        <a href="#" class="card-footer-item">Create</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
+    {%endfor%}
+  </body>
+</html>

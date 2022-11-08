@@ -106,11 +106,13 @@
               >
             </div>
           </li>
+          {% comment %}
           <li class="nav-item">
-            <a class="nav-link active" href="{%url 'posts:topics_view'%}"
+            <a class="nav-link active" href="{%url 'posts:contacts_view'%}"
               >Institute Contacts</a
             >
           </li>
+          {% endcomment %}
           <li class="nav-item">
             <a class="nav-link active" href="{%url 'posts:topics_view'%}"
               >Events around me</a
@@ -119,6 +121,11 @@
           <li class="nav-item">
             <a class="nav-link active" href="{%url 'posts:topics_view'%}"
               >Mess Menu</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'cms:cmsFun'%}"
+              >Complaint register</a
             >
           </li>
         </ul>
