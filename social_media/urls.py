@@ -31,4 +31,5 @@ urlpatterns = [
     # posts app urls
     path("posts/", include("posts.urls", namespace="posts")),
     path("cms/", include("cms.urls")),
+    path("mess/", include("mess_menu.urls")),
 ]

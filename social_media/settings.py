@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "posts.apps.PostsConfig",  # posts app config
     "taggit",  # pip install django_taggit
     "cms",
+    "mess_menu",
 ]
 
 MIDDLEWARE = [

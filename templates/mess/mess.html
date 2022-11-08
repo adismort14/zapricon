@@ -1,34 +1,78 @@
+{% load static %}
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}" />
-    <style>
-      #Day{
-        margin:40px auto 40px;
-      }
-       label{
-         font-size: 200%;
-       }
-       select{
-         font-size: 200%;
-         background-color: rgb(97,97,97);
-         padding:5px;
-         border-radius: 5%;
-         color: white;
-       }
-      body{
-        margin:0 auto 0;
-        background-color: black;
-        color:white;
-        font-family: "Poppins";
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'css/bootstrap.min.css'%}"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
 
+    <script
+      src="{% static 'js/bootstrap.min.js' %}"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #Day {
+        margin: 40px auto 40px;
       }
-      iframe{
+      label {
+        font-size: 200%;
+      }
+      select {
+        font-size: 200%;
+        background-color: rgb(97, 97, 97);
+        padding: 5px;
+        border-radius: 5%;
+        color: white;
+      }
+      body {
+        margin: 0 auto 0;
+        background-color: black;
+        color: white;
+        {% comment %} font-family: "Poppins"; {% endcomment %}
+      }
+      iframe {
         width: 50%;
         height: 60vh;
         margin: auto auto;
-        background-color: rgb(97,97,97);
+        background-color: rgb(97, 97, 97);
       }
-      div{
+      div {
         margin: auto auto;
       }
     </style>
@@ -40,50 +84,156 @@
     />
   </head>
   <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+      style="position: relative"
+    >
+      <a class="navbar-brand" href="{%url 'homepage'%}">Epicenter</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{%url 'posts:posts_home'%}"
+              >Feed <span class="sr-only"></span
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'posts:topics_view'%}"
+              >Topics</a
+            >
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link active dropdown-toggle"
+              href="{%url 'accounts:showPeople' %}"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              People
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{%url 'accounts:accounts_home'%}"
+                >Suggested People</a
+              >
+              <div class="dropdown-divider"></div>
+
+              <a class="dropdown-item" href="{%url 'accounts:following'%}"
+                >Following</a
+              >
+
+              <a class="dropdown-item" href="{%url 'accounts:followers'%}"
+                >Followers</a
+              >
+            </div>
+          </li>
+          {% comment %}
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'posts:contacts_view'%}"
+              >Institute Contacts</a
+            >
+          </li>
+          {% endcomment %}
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'posts:topics_view'%}"
+              >Events around me</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'mess_menu:showMenu'%}"
+              >Mess Menu</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{%url 'cms:cmsFun'%}"
+              >Complaint register</a
+            >
+          </li>
+        </ul>
+
+        {%if not request.user.is_authenticated%}
+        <a href="{%url 'accounts:register'%}">
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">
+            Register
+          </button>
+        </a>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{%url 'accounts:login'%}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Login
+          </button>
+        </a>
+
+        {%else%}
+
+        <a href="{%url 'accounts:logout'%}">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+            Logout
+          </button>
+        </a>
+
+        {%endif%}
+      </div>
+    </nav>
     <label for="Day">Choose the day:</label>
 
-  <select name="Day" id="Day">
-    <option value="Select">--Select--</option>
-    <option value="Monday">Monday</option>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-    <option value="Friday">Friday</option>
-    <option value="Saturday">Saturday</option>
-    <option value="Sunday">Sunday</option>
-  </select>
+    <select name="Day" id="Day">
+      <option value="Select">--Select--</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
     <div id="excel"></div>
   </body>
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script>
-  $(function() {
-        $('#Day').on('change',function(){
-      if( $(this).val()=="Monday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1802086908&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+  $(function () {
+    $("#Day").on("change", function () {
+      if ($(this).val() == "Monday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1802086908&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Tuesday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=347923426&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Wednesday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=433451765&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Thursday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1903663321&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Friday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=2075069197&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Saturday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=80858048&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Sunday") {
+        document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1026717145&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+      } else if ($(this).val() == "Select") {
+        document.getElementById("excel").innerHTML = "";
       }
-      else if( $(this).val()=="Tuesday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=347923426&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Wednesday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=433451765&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Thursday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1903663321&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Friday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=2075069197&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Saturday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=80858048&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Sunday"){
-        document.getElementById('excel').innerHTML = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1026717145&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
-      }
-      else if( $(this).val()=="Select"){
-        document.getElementById('excel').innerHTML = '';
-      }
-      
-  });});
-      </script>
+    });
+  });
+</script>
