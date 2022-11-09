@@ -71,10 +71,15 @@
         height: 60vh;
         margin: auto auto;
         background-color: rgb(97, 97, 97);
+        margin-bottom: 50px;
       }
       div {
         margin: auto auto;
       }
+      #hostel-main,#hostel-secondary{
+        font-size: 200%;
+      }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -195,8 +200,15 @@
         {%endif%}
       </div>
     </nav>
-    <label for="Day">Choose the day:</label>
+    <label for="Hostel">Choose your hostel:</label>
 
+    <select name="Hostel" id="Hostel">
+      <option value="Select">--Select--</option>
+      <option value="Dio">Dio</option>
+      <option value="Ena">Ena</option>
+    </select>
+    <label for="Day">Choose the day:</label>
+    
     <select name="Day" id="Day">
       <option value="Select">--Select--</option>
       <option value="Monday">Monday</option>
@@ -207,7 +219,11 @@
       <option value="Saturday">Saturday</option>
       <option value="Sunday">Sunday</option>
     </select>
+    <div id="hostel-main"></div>
     <div id="excel"></div>
+    <div id="hostel-secondary"></div>
+    <div id="excel2"></div>
+    
   </body>
 </html>
 
@@ -218,27 +234,61 @@
       if ($(this).val() == "Monday") {
         document.getElementById("excel").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1802086908&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1802086908&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Tuesday") {
         document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=347923426&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=347923426&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Wednesday") {
         document.getElementById("excel").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=433451765&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=433451765&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Thursday") {
         document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1903663321&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1903663321&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Friday") {
         document.getElementById("excel").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=2075069197&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=2075069197&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Saturday") {
         document.getElementById("excel").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=80858048&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=80858048&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Sunday") {
         document.getElementById("excel").innerHTML =
           '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1026717145&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
+        document.getElementById("excel2").innerHTML =
+          '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT13kQSb3fZemwJk-ZfC0ciQ-VIkl5Xhykn1ZH1PB6TfsB44CkL7AvGkBVbrmtusx8fMKwUFNB7pefm/pubhtml?gid=1026717145&amp;single=true&amp;widget=true&amp;headers=false"></iframe>';
       } else if ($(this).val() == "Select") {
         document.getElementById("excel").innerHTML = "";
       }
+    });
+    $("#Hostel").on("change", function () {
+      if ($(this).val() == "Dio") {
+        document.getElementById("hostel-main").innerHTML =
+          'Dio';
+        document.getElementById("hostel-secondary").innerHTML =
+          'Ena';
+      } 
+      else if ($(this).val() == "Ena") {
+        document.getElementById("hostel-main").innerHTML =
+          'Ena';
+        document.getElementById("hostel-secondary").innerHTML =
+          'Dio';
+      } 
+      else if ($(this).val() == "Select") {
+        document.getElementById("hostel-main").innerHTML =
+          '';
+        document.getElementById("hostel-secondary").innerHTML =
+          '';
+      } 
     });
   });
 </script>
