@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import MessComplaint
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -22,13 +23,29 @@ def read(request, complaint_id):
         )
 
 
-def update(request):
-    return HttpResponse("Hello update")
+def update(request, complaint_id):
+    if complaint_id:
+        post = MessComplaint.objects.filter(pk=complaint_id)
+    if request.POST:
+        newMessName = request.POST["messName"]
+        newComplaint = request.POST["complaint"]
+        post.update(messName=newMessName, complaint=newComplaint)
+        return redirect("cms/")
+    return render(
+        request=request, template_name="cms/update.html", context={"post": post.get()}
+    )
 
 
-def delete(request):
-    return HttpResponse("Hello delete")
+def delete(request, complaint_id):
+    MessComplaint.objects.filter(pk=complaint_id).delete()
+    return redirect("/cms")
 
 
 def create(request):
-    return HttpResponse("Hello create")
+    if request.POST:
+        messName = request.POST["mess-name"]
+        complaint = request.POST["complaint"]
+        MessComplaint.objects.create(messName=messName, complaint=complaint)
+        return redirect("/cms")
+
+    return render(request=request, template_name="cms/create.html", context={})

@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <h1>Please file your complaints here!</h1>
+    <h1 class="title is-2" style="text-align: center">
+      Please file your complaints here!
+    </h1>
     {%for entry in data %}
     <div class="card">
       <header class="card-header">
@@ -27,13 +29,14 @@
         <div class="content">{{entry.complaint}}</div>
       </div>
       <footer class="card-footer">
-        <a
-          href="{% url 'cms:read' complaint_id=MessComplaint.id%}"
-          class="card-footer-item"
-          >Read</a
+        <a href="{% url 'cms:read' entry.id%}" class="card-footer-item">Read</a>
+        <a href="{%url 'cms:create'%}" class="card-footer-item">Create</a>
+        <a href="{%url 'cms:update' entry.id%}" class="card-footer-item"
+          >Update</a
         >
-        <a href="#" class="card-footer-item">Create</a>
-        <a href="#" class="card-footer-item">Delete</a>
+        <a href="{%url 'cms:delete' entry.id%}" class="card-footer-item"
+          >Delete</a
+        >
       </footer>
     </div>
     {%endfor%}
