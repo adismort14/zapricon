@@ -69,4 +69,6 @@ urlpatterns = [
     # url to unfollow a profile
     path("<str:username>/unfollow", views.unfollow_view, name="unfollow"),
     path("people", showPeople, name="showPeople"),
+    path("calendar", showCalendar, name="showCalendar"),
+    path("map", showMap, name="showMap"),
 ]

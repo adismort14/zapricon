@@ -241,3 +241,11 @@ def following(request):
 
 def showPeople(request):
     return render(request=request, template_name="accounts/people.html", context={})
+
+
+def showCalendar(request):
+    return render(request=request, template_name="accounts/calendar.html", context={})
+
+
+def showMap(request):
+    return render(request=request, template_name="accounts/map.html", context={})

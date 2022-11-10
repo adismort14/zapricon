@@ -36,12 +36,13 @@
 
     .main-container {
       background-color: black;
-      margin-top: 50px;
+      margin: 50px auto;
+      min-height: 120vh;
     }
 
     .title-text {
       text-align: center;
-      color: #00ADB5;
+      color: #00adb5;
     }
 
     .new-complaint-container {
@@ -51,7 +52,7 @@
     }
 
     .new-complaint-title {
-      color: #EEEEEE;
+      color: #eeeeee;
       margin: auto 200px;
     }
 
@@ -72,13 +73,12 @@
       max-width: 50%;
     }
   </style>
-
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
     style="position: relative; background-color: #393e46 !important">
-    <a class="navbar-brand mx-5" href="{%url 'homepage'%}"
+    <a class="navbar-brand mx-3" href="{%url 'homepage'%}"
       style="font-family: 'Montserrat', sans-serif; font-size: 24px">Epicenter</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,16 +87,16 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active mx-3">
-          <a class="nav-link" href="{%url 'posts:posts_home'%}" style="font-family: 'Montserrat', sans-serif">Feed <span
-              class="sr-only"></span></a>
+        <li class="nav-item active mx-2">
+          <a class="nav-link" href="{%url 'posts:posts_home'%}" style="font-family: 'Montserrat', sans-serif">Event Feed
+            <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="nav-link active" href="{%url 'posts:topics_view'%}"
-            style="font-family: 'Montserrat', sans-serif">Topics</a>
+            style="font-family: 'Montserrat', sans-serif">Event Topics</a>
         </li>
 
-        <li class="nav-item dropdown mx-3">
+        <li class="nav-item dropdown mx-2">
           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="font-family: 'Montserrat', sans-serif">
             People
@@ -113,21 +113,25 @@
               style="font-family: 'Montserrat', sans-serif">Followers</a>
           </div>
         </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link active" href="{%url 'posts:topics_view'%}"
-            style="font-family: 'Montserrat', sans-serif">Events around me</a>
-        </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="nav-link active" href="{%url 'accounts:showPeople' %}"
             style="font-family: 'Montserrat', sans-serif">Important Contacts</a>
         </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="nav-link active" href="{%url 'mess_menu:showMenu'%}"
             style="font-family: 'Montserrat', sans-serif">Mess Menu</a>
         </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="nav-link active" href="{%url 'cms:cmsFun'%}" style="font-family: 'Montserrat', sans-serif">Complaint
             register</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'accounts:showCalendar'%}"
+            style="font-family: 'Montserrat', sans-serif">Academic Calendar</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'accounts:showMap'%}"
+            style="font-family: 'Montserrat', sans-serif">Institute Map</a>
         </li>
       </ul>
 
@@ -158,18 +162,20 @@
   </nav>
 
   <div class="main-container">
-    <h1 class="title is-2 title-text">
-      Mess Complaint Register
-    </h1>
+    <h1 class="title is-2 title-text">Mess Complaint Register</h1>
     <div class="new-complaint-container">
-      <h2 class="title is-2 new-complaint-title">Post your complaint here!</h2>
+      <h2 class="title is-2 new-complaint-title">
+        Post your complaint here!
+      </h2>
       <div class="button-div-container">
-        <button class="button is-info"
-          style="font-family: 'Montserrat', sans-serif; background-color: #00ADB5 !important"><a
-            href="{%url 'cms:create'%}" style="text-decoration: none; color: #000000; font-weight: 500;;">New
-            Complaint</a></button>
+        <button class="button is-info" style="
+              font-family: 'Montserrat', sans-serif;
+              background-color: #00adb5 !important;
+            ">
+          <a href="{%url 'cms:create'%}" style="text-decoration: none; color: #000000; font-weight: 500">New
+            Complaint</a>
+        </button>
       </div>
-
     </div>
 
     {%for entry in data %}
@@ -193,7 +199,6 @@
     </div>
     {%endfor%}
   </div>
-
 </body>
 
 </html>

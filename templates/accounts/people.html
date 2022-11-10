@@ -30,11 +30,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
-  <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <style>
     body {
       background: black;
@@ -80,155 +77,90 @@
 </head>
 
 <body>
-  <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      style="position: relative; background-color: #393e46 !important"
-    >
-      <a
-        class="navbar-brand mx-5"
-        href="{%url 'homepage'%}"
-        style="font-family: 'Montserrat', sans-serif; font-size: 24px"
-        >Epicenter</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+    style="position: relative; background-color: #393e46 !important">
+    <a class="navbar-brand mx-3" href="{%url 'homepage'%}"
+      style="font-family: 'Montserrat', sans-serif; font-size: 24px">Epicenter</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active mx-3">
-            <a
-              class="nav-link"
-              href="{%url 'posts:posts_home'%}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Feed <span class="sr-only"></span
-            ></a>
-          </li>
-          <li class="nav-item mx-3">
-            <a
-              class="nav-link active"
-              href="{%url 'posts:topics_view'%}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Topics</a
-            >
-          </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active mx-2">
+          <a class="nav-link" href="{%url 'posts:posts_home'%}" style="font-family: 'Montserrat', sans-serif">Event Feed
+            <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'posts:topics_view'%}"
+            style="font-family: 'Montserrat', sans-serif">Event Topics</a>
+        </li>
 
-          <li class="nav-item dropdown mx-3">
-            <a
-              class="nav-link active dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="font-family: 'Montserrat', sans-serif"
-            >
-              People
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                href="{%url 'accounts:accounts_home'%}"
-                style="font-family: 'Montserrat', sans-serif"
-                >Suggested People</a
-              >
-              <div class="dropdown-divider"></div>
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="font-family: 'Montserrat', sans-serif">
+            People
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{%url 'accounts:accounts_home'%}"
+              style="font-family: 'Montserrat', sans-serif">Suggested People</a>
+            <div class="dropdown-divider"></div>
 
-              <a
-                class="dropdown-item"
-                href="{%url 'accounts:following'%}"
-                style="font-family: 'Montserrat', sans-serif"
-                >Following</a
-              >
+            <a class="dropdown-item" href="{%url 'accounts:following'%}"
+              style="font-family: 'Montserrat', sans-serif">Following</a>
 
-              <a
-                class="dropdown-item"
-                href="{%url 'accounts:followers'%}"
-                style="font-family: 'Montserrat', sans-serif"
-                >Followers</a
-              >
-            </div>
-          </li>
-          <li class="nav-item mx-3">
-            <a
-              class="nav-link active"
-              href="{%url 'posts:topics_view'%}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Events around me</a
-            >
-          </li>
-          <li class="nav-item mx-3">
-            <a
-              class="nav-link active"
-              href="{%url 'accounts:showPeople' %}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Important Contacts</a
-            >
-          </li>
-          <li class="nav-item mx-3">
-            <a
-              class="nav-link active"
-              href="{%url 'mess_menu:showMenu'%}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Mess Menu</a
-            >
-          </li>
-          <li class="nav-item mx-3">
-            <a
-              class="nav-link active"
-              href="{%url 'cms:cmsFun'%}"
-              style="font-family: 'Montserrat', sans-serif"
-              >Complaint register</a
-            >
-          </li>
-        </ul>
+            <a class="dropdown-item" href="{%url 'accounts:followers'%}"
+              style="font-family: 'Montserrat', sans-serif">Followers</a>
+          </div>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'accounts:showPeople' %}"
+            style="font-family: 'Montserrat', sans-serif">Important Contacts</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'mess_menu:showMenu'%}"
+            style="font-family: 'Montserrat', sans-serif">Mess Menu</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'cms:cmsFun'%}" style="font-family: 'Montserrat', sans-serif">Complaint
+            register</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'accounts:showCalendar'%}"
+            style="font-family: 'Montserrat', sans-serif">Academic Calendar</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="{%url 'accounts:showMap'%}"
+            style="font-family: 'Montserrat', sans-serif">Institute Map</a>
+        </li>
+      </ul>
 
-        {%if not request.user.is_authenticated%}
-        <a
-          href="{%url 'accounts:register'%}"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">
-            Register
-          </button>
-        </a>
+      {%if not request.user.is_authenticated%}
+      <a href="{%url 'accounts:register'%}" style="font-family: 'Montserrat', sans-serif">
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">
+          Register
+        </button>
+      </a>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a
-          href="{%url 'accounts:login'%}"
-          style="font-family: 'Montserrat', sans-serif;margin-right:40px;"
-        >
-          <button
-            class="btn btn-outline-success my-2 my-sm-0 mx-3"
-            type="submit"
-          >
-            Login
-          </button>
-        </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{%url 'accounts:login'%}" style="font-family: 'Montserrat', sans-serif; margin-right: 40px">
+        <button class="btn btn-outline-success my-2 my-sm-0 mx-3" type="submit">
+          Login
+        </button>
+      </a>
 
-        {%else%}
+      {%else%}
 
-        <a
-          href="{%url 'accounts:logout'%}"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-            Logout
-          </button>
-        </a>
+      <a href="{%url 'accounts:logout'%}" style="font-family: 'Montserrat', sans-serif; margin-right: 40px">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+          Logout
+        </button>
+      </a>
 
-        {%endif%}
-      </div>
-    </nav>
+      {%endif%}
+    </div>
+  </nav>
   <div class="container text-center mt-5 mb-2">
     <h1 class="mb-0 emergency">Emergency</h1>
   </div>
