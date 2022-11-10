@@ -4,6 +4,7 @@ from django.shortcuts import (
     HttpResponse,
     get_object_or_404,
     HttpResponseRedirect,
+    redirect,
 )
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -39,7 +40,7 @@ def register(request):
 
             # login
 
-            return HttpResponse("Success refister!")
+            return redirect("{{new_user.username}}/")
     # if new form to be rendered
     else:
         user_form = UserRegistrationForm()

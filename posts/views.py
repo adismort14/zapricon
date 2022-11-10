@@ -121,4 +121,4 @@ def topics_view(request):
 # view to see all topics
 def contacts_view(request):
     # topics = Tag.objects.all()
-    return render(request, "people.html")
+    return render(request, "accounts/people.html")
