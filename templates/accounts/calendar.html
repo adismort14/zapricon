@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0;
+      padding: 0;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width:100%;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      font-family: "Poppins";
+      flex-direction: column;
+    }
+    iframe{
+      width:100%;
+      height: 250vh;
+      filter:invert(100%); 
+    }
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <h1>Academic Calendar Generator</h1>
+    <iframe src="https://openlake.github.io/iitbh-calendar/"></iframe>
+  </div>
+</body>
+</html>
