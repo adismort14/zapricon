@@ -27,12 +27,14 @@ def update(request, complaint_id):
     if complaint_id:
         post = MessComplaint.objects.filter(pk=complaint_id)
     if request.POST:
-        newMessName = request.POST["messName"]
+        newMessName = request.POST["mess-name"]
         newComplaint = request.POST["complaint"]
         post.update(messName=newMessName, complaint=newComplaint)
-        return redirect("cms/")
+        return redirect("/cms")
     return render(
-        request=request, template_name="cms/update.html", context={"post": post.get()}
+        request=request,
+        template_name="cms/update.html",
+        context={"post": post.get()},
     )
 
 

@@ -7,8 +7,18 @@ Posts
 
 
 {%block content%}
-<h1 class="post-header" style="font-size:50px;">Events happening around me!</h1>
+<h1 class="post-header" style="font-size:50px;font-family:Montserrat,sans-serif;">Events happening around me!</h1>
+<button style="
+              font-family: 'Montserrat', sans-serif;
+              background-color: #00adb5 !important;
+			  border-radius:10px;
+			  padding:15px;
+			  margin-top:25px;
+            ">
+          <a href="{%url 'posts:new_post'%}" style="text-decoration: none; color: #000000; font-weight: 500">Publish a new event!</a>
+        </button>
 {%endblock%}
+
 
 
 {%block content_no_jt%}
@@ -26,9 +36,9 @@ Posts
 	<h3> by {{post.author}} on {{post.publish}}</h3>
 </p>
 
-<p>Topics:
+<p style="font-family:Montserrat,sans-serif;">Topics:
 	{%for topic in post.topics.all %}
-		<a href="{%url 'posts:posts_by_topic' topic.slug %}">
+		<a href="{%url 'posts:posts_by_topic' topic.slug %}" style="font-family:Montserrat,sans-serif;">
 			{{topic.name}}
 		</a>
 

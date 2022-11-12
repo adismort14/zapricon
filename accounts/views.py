@@ -40,7 +40,7 @@ def register(request):
 
             # login
 
-            return redirect("{{new_user.username}}/")
+            return redirect("/accounts/" + new_user.username + "/")
     # if new form to be rendered
     else:
         user_form = UserRegistrationForm()
