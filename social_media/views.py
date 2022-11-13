@@ -3,7 +3,6 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse_lazy
 
 
-
 # view for main homepage
 def homepage(request):
 	# if user is loggedd in redirect to posts page

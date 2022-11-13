@@ -57,7 +57,9 @@ def register(request):
 def login_view(request):
     # logout required for login
     if request.user.is_authenticated:
+        # user_form.username
         return HttpResponseRedirect(reverse_lazy("homepage"))
+        # return render(request,"/accounts/"+username+"/")
 
     # if form filled
     if request.method == "POST":
@@ -77,7 +79,8 @@ def login_view(request):
                     if next_page:
                         return HttpResponseRedirect(next_page)
 
-                    return HttpResponseRedirect(reverse_lazy("homepage"))
+                    # return HttpResponseRedirect(reverse_lazy("homepage"))
+                    return redirect("/accounts/" + user.username + "/")
 
                 else:
                     return HttpResponse("Account Terminated!")
