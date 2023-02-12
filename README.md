@@ -7,6 +7,8 @@ To run the code run the following commands.
 
 
 ``` 
+pip3 install -r requirements.txt
+
 pip3 install djongo
     
 python3 manage.py makemigrations
