@@ -19,3 +19,9 @@ python3 manage.py runserver
     
  ```
 
+Some Screenshots:
+
+![Epicenter Landing Page](https://github.com/adismort14/zapricon/assets/104080429/21fa679b-ca65-487c-9bd1-24a6230f3baa)
+
+
+
